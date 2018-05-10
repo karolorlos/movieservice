@@ -206,18 +206,6 @@ public class SlopeOneService {
 
         return listOfPredictions;
     }
-//    public Double findBestPrediction(List<Prediction> listAllPredictions, Map<Long, Double> user){
-//        listAllPredictions = findAllPredictions(user);
-//        Double bestPredictionRating = 0.0;
-//        for (Prediction prediction: listAllPredictions
-//             ) {
-//            if (prediction.getPredictionRating() > bestPredictionRating){
-//                bestPredictionRating = prediction.getPredictionRating();
-//
-//            }
-//        }
-//        return bestPredictionRating;
-//    }
-//
+
 
 }

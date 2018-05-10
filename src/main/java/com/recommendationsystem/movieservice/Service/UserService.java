@@ -41,16 +41,4 @@ public class UserService  {
 
 
 
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//
-//        User curruser = repository.findByUsername(username);
-//
-//        UserDetails user = new org.springframework.security.core.userdetails.User(username,curruser.getPasswordHash(),true,
-//                true,true,true, AuthorityUtils.createAuthorityList(curruser.getRole()));
-//
-//        System.out.println("ROLE: " + curruser.getRole());
-//        currUserId = curruser.getUserId();
-//        System.out.println("User ID: "+ currUserId);
-//        return user;
-//    }
 }

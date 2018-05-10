@@ -43,9 +43,7 @@ public class MovieController {
     @RequestMapping(value = "/")
     public String indexPage(Model model){
 
-//        List<Movie> moviesWithRatings = movieService.findAllMoviesWithRatings(userService.getUserId(request.getUserPrincipal().getName()));
-//        model.addAttribute("movies",moviesWithRatings);
-       // Pageable pageable = new PageRequest(0,4, Sort.Direction.DESC,"movieId");
+
         List<Movie> moviesLastAdded = movieRepository.findTop4ByOrderByMovieIdDesc();
         model.addAttribute("movies", moviesLastAdded);
         return "index";
@@ -62,7 +60,7 @@ public class MovieController {
 
     @RequestMapping(value = "/movies")
     public String findAllMovies(Model model){
-//        List<Movie> movies = (List<Movie>) movieRepository.findAll();
+
          List<Movie> movies = ratingService.createListMoviesWithAvgRatings();
         model.addAttribute("movies",movies);
 

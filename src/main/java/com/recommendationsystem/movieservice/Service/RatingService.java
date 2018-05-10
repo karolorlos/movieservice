@@ -125,7 +125,7 @@ public class RatingService {
             }
             avgRating = ratingValue/count;
             Movie movie = movieRepository.findByMovieId(movieId);
-            //movie.setMovieId(movieId);
+
 
             movie.setAverageRating(roundAverageRating(avgRating,2));
             listMoviesWithAvg.add(movie);
