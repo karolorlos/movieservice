@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Lista filmów</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/menu :: menu">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="col-md-4">
+        <h1>Filmy</h1>
+    </div>
+    <div class="col-md-4">
+        <h3 th:inline="text">Witaj [[${#httpServletRequest.remoteUser}]]</h3>
+    </div>
+    <div class="col-md-4" style="padding:20px 0">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Wyloguj" class="btn btn-danger"/>
+        </form>
+    </div>
+
+    <div style="padding:0 20px">
+        <table class="table table-striped">
+            <tr>
+                <th>Kadr</th>
+                <th>Tytuł</th>
+                <th>Kategoria</th>
+                <th>Rok produkcji</th>
+                <th>Opis</th>
+                <th>Średnia ocen(MIN 0.00 - 1 MAX)</th>
+
+                <th>Oceń</th>
+            </tr>
+            <tr th:each = "movie : ${movies}" >
+                <td> <img th:src="${movie.image}" width="200" height="350" /></td>
+                <td th:text="${movie.title}"></td>
+                <td th:text="${movie.category}"></td>
+                <td th:text="${movie.year}"></td>
+                <td th:text="${movie.description}"></td>
+                <td th:text="${movie.averageRating}"></td>
+
+
+
+                <td>
+                <a th:href="@{/addRating/{id}(id=${movie.movieId})}" class="btn btn-primary btn-xs">Dodaj ocenę</a>
+
+                </td>
+
+
+        </table>
+        <a href="/addRecommendations" class="btn btn-primary">Rekomendowane filmy dla Ciebie: </a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{../css/bootstrap.min.css}" />
+
+    <title>Informacje o filmie</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/menu :: menu">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="row">
+    <div class="col-sm-4">
+        <img th:src="${movie.image}" width="200" height="350" />
+        <p th:text="${movie.title}" />
+        <p th:text="${movie.category}" />
+        <p th:text="${movie.year}" />
+
+        <p th:text="${movie.description}" />
+
+
+
+
+    </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Recommending system</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+    <link type="text/css" rel="stylesheet" th:href="@{css/main.css}" />
+
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/menu :: menu">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="banner">
+    <i class="icon fa-glass"></i>
+    <h2>
+        <span th:text="'Witaj, ' + ${#httpServletRequest.remoteUser} + '!'" th:remove="tag">&nbsp;</span>
+    </h2>
+    <h3> Najnowsze filmy</h3>
+</section>
+<div class="container-fluid" style="margin-top:30px;">
+
+    <div class="row" >
+        <div class="col-sm-6"  th:each = "movie : ${movies}" >
+            <span class="border border-dark">
+            <div class="card"  style="width: 18rem;">
+                <img class="card-img-top" th:src="${movie.image}" width="200" height="350" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${movie.title}"></h5>
+                    <p class="card-text" th:text="${movie.category}"></p>
+                    <p class="card-text" th:text="${movie.year}"></p>
+
+                    <a th:href="@{/showDetails/{id}(id=${movie.movieId})}" class="btn btn-primary">Więcej informacji</a>
+
+                </div>
+            </div>
+            </span>
+
+
+
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+
+</body>
+</html>

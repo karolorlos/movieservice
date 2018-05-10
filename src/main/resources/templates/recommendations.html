@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Lista rekomendowanych filmów</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}" />
+
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/menu :: menu">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="col-md-4">
+        <h1>Filmy</h1>
+    </div>
+    <div class="col-md-4">
+        <h3 th:inline="text">Witaj [[${#httpServletRequest.remoteUser}]]</h3>
+    </div>
+    <div class="col-md-4" style="padding:20px 0">
+        <form th:action="@{/logout}" method="post">
+            <input type="submit" value="Wyloguj" class="btn btn-danger"/>
+        </form>
+    </div>
+
+    <div style="padding:0 20px">
+        <table class="table table-striped">
+            <tr>
+
+                <th>Tytuł</th>
+                <th>Prognozowana ocena</th>
+
+            </tr>
+            <tr th:each = "predict : ${predictions}" >
+
+                <td th:text="${predict.title}"></td>
+                <td th:text="${predict.predictionRating}"></td>
+
+
+
+
+
+        </table>
+        <a href="/movies" class="btn btn-primary">Powróć do wszystkich filmów </a>
+    </div>
+</div>
+</body>
+</html>

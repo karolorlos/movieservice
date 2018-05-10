@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Developer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{../css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Add rate</h1>
+    <form th:action="@{/movie/{id}/rating(id=${movie.movieId})}" method="get" enctype="multipart/form-data" >
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Movie info</div>
+                <div class="panel-body" style="padding-left: 5px;">
+                    Title: <b th:text="${movie.title}" /> <br/>
+                    Category: <span th:text="${movie.category}" /><br/>
+                    Year: <span th:text="${movie.year}" /><br/>
+
+                </div>
+            </div>
+
+            <input type="submit" name="action" class="btn btn-primary" value="Save"></input>
+            <input type="submit" name="action" class="btn btn-default" value="Cancel"></input>
+        </div>
+    </form>
+</div>
+</body>
+</html>

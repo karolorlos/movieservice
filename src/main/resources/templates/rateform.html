@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dodaj ocenę</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" th:href="@{../css/bootstrap.min.css}" />
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" th:replace="fragments/menu :: menu">
+
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Static header</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Dodaj ocenę</h1>
+
+<div class="col-md-4">
+    <form  th:object="${rateform}" th:action="@{/saverate}" action="#" method="post">
+        <input type="text" th:field="*{movieId}"  class="form-control"
+               placeholder="Movie ID" />
+
+        <div style="clear: both; display: block; height: 10px;"></div>
+        <input type="text" th:field="*{rateValue}" class="form-control"
+               placeholder="ratingValue" />
+
+        <div style="clear: both; display: block; height: 10px;"></div>
+
+
+
+        <input type="submit" class="btn btn-primary" value="Dodaj"></input>
+    </form>
+</div>
+</body>
+</html>
