@@ -10,8 +10,6 @@ import java.util.List;
 public interface MovieRepository extends CrudRepository<Movie,Long> {
 
     Movie findByMovieId(Long movieId);
-
-    //Iterable<Movie> findTopByMovieId
     List<Movie> findTop4ByOrderByMovieIdDesc();
-    //Iterable<Movie> findAllByCategory(String category);
+
  }

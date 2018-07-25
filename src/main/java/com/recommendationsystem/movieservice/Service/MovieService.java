@@ -54,8 +54,4 @@ public class MovieService {
         return title;
     }
 
-//    public List<Movie> ListMoviesByCategory(String category){
-//
-//
-//    }
 }

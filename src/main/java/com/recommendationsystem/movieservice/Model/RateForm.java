@@ -64,10 +64,6 @@ public class RateForm {
 
     public RateForm(Long movieId) {
         this.movieId = movieId;
-
-
-
-
     }
 
     public RateForm(Long rateId, double rateValue, Long movieId, Long userId) {

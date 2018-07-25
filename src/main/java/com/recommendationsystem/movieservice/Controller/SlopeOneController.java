@@ -17,9 +17,7 @@ import java.util.Map;
 @Controller
 public class SlopeOneController {
 
-//    @SuppressWarnings("SpringJavaAutowiringInspection")
-//    @Autowired
-//    private SlopeOneService slopeOneService;
+
     @SuppressWarnings("SpringJavaAutowiringInspection")
     @Autowired
     private RatingService ratingService;
@@ -52,9 +50,6 @@ public class SlopeOneController {
         slopeOneService.printBestOption(slopeOneService.predict(user));
 
         model.addAttribute("predictions",slopeOneService.findAllPredictions(slopeOneService.predict(user),currUser));
-
-
-
 
         return "recommendations";
     }

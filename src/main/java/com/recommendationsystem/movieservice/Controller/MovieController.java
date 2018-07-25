@@ -38,18 +38,12 @@ public class MovieController {
     @RequestMapping(value = "/login")
     public String login(){return "login";}
 
-
-
     @RequestMapping(value = "/")
     public String indexPage(Model model){
 
-//        List<Movie> moviesWithRatings = movieService.findAllMoviesWithRatings(userService.getUserId(request.getUserPrincipal().getName()));
-//        model.addAttribute("movies",moviesWithRatings);
-       // Pageable pageable = new PageRequest(0,4, Sort.Direction.DESC,"movieId");
         List<Movie> moviesLastAdded = movieRepository.findTop4ByOrderByMovieIdDesc();
         model.addAttribute("movies", moviesLastAdded);
         return "index";
-
     }
     @RequestMapping(value = "/yourRatings")
     public String findUserRatings(Model model, HttpServletRequest request){
@@ -78,10 +72,6 @@ public class MovieController {
         return "movieDetails";
     }
 
-
-
-
-
     @RequestMapping(value ="addMovieRating/{id}",method = RequestMethod.GET)
     public String addRate(@PathVariable("id") Long movieId,@RequestParam Long ratingId, Model model){
 
@@ -105,8 +95,4 @@ public class MovieController {
         }
         return "redirect:/movies";
     }
-
-
-
-
 }

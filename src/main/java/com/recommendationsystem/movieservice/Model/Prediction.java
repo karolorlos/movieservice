@@ -10,8 +10,6 @@ import java.util.Map;
 
 public class Prediction {
 
-
-
     private Long movieId;
 
     private String title;

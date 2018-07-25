@@ -21,9 +21,6 @@ public class SlopeOneService {
     private RatingRepository ratingRepository;
 
 
-
-
-
         Map<Long, Map<Long, Double>> diffMatrix;
         Map<Long, Map<Long, Integer>> freqMatrix;
         static Long[] mAllItems = new Long[]{1L,2L,3L,4L,5L,6L,7L,8L,9L};
@@ -91,13 +88,7 @@ public class SlopeOneService {
                 diffMatrix.get(j).put(i, oldvalue / count);
             }
         }
-
-
-
-
     }
-
-
 
     public Map<Long, Double> predict( Map<Long, Double> user)
     {
@@ -198,7 +189,6 @@ public class SlopeOneService {
                     }
 
             }
-
             listOfPredictions.sort(Comparator.comparingDouble(Prediction::getPredictionRating).reversed());
 
 
@@ -206,18 +196,5 @@ public class SlopeOneService {
 
         return listOfPredictions;
     }
-//    public Double findBestPrediction(List<Prediction> listAllPredictions, Map<Long, Double> user){
-//        listAllPredictions = findAllPredictions(user);
-//        Double bestPredictionRating = 0.0;
-//        for (Prediction prediction: listAllPredictions
-//             ) {
-//            if (prediction.getPredictionRating() > bestPredictionRating){
-//                bestPredictionRating = prediction.getPredictionRating();
-//
-//            }
-//        }
-//        return bestPredictionRating;
-//    }
-//
 
 }

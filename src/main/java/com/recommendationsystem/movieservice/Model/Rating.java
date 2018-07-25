@@ -26,10 +26,6 @@ public class Rating {
 
     private String movieTitle;
 
-//
-//    @ManyToMany(mappedBy = "ratings")
-    //private Set<Movie> movies;
-
     @ManyToMany(mappedBy = "userRatings")
     private Set<User> uRatings;
 

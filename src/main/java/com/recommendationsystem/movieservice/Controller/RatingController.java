@@ -31,29 +31,13 @@ public class RatingController {
     @Autowired
     private RatingService ratingService;
 
-
     @Autowired
     private UserService userService;
 
-
-
-
-
-
     @RequestMapping(value = "/addRating/{id}", method = RequestMethod.GET)
     public String addRate(@PathVariable("id") Long movieId, Model model){
-
-
-
-
         model.addAttribute("rateform", new RateForm(movieId));
         model.addAttribute("movie", movieRepository.findById(movieId).get());
-
-
-
-
-
-
         return "rateform";
     }
 
@@ -62,11 +46,9 @@ public class RatingController {
     @RequestMapping(value = "saverate", method = RequestMethod.POST)
     public String saveRate(@ModelAttribute("rateform")RateForm rateForm, BindingResult bindingResult,HttpServletRequest request){
         ratingRepository.deleteRatingByMovieId(rateForm.getMovieId());
-
         Long cUid = userService.getUserId(request.getUserPrincipal().getName());
 
         if (!bindingResult.hasErrors()){
-
                 Rating newRate = new Rating();
                 newRate.setMovieId(rateForm.getMovieId());
                 newRate.setRating(rateForm.getRateValue());
@@ -75,10 +57,6 @@ public class RatingController {
 
                 return "redirect:/";
             }
-
-
         return "rateform";
-
     }
-
 }

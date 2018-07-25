@@ -29,7 +29,13 @@
     <i class="icon fa-glass"></i>
     <h2>
         <span th:text="'Witaj, ' + ${#httpServletRequest.remoteUser} + '!'" th:remove="tag">&nbsp;</span>
+
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Wyloguj" class="btn btn-danger"/>
+            </form>
+
     </h2>
+
     <h3> Najnowsze filmy</h3>
 </section>
 <div class="container-fluid" style="margin-top:30px;">

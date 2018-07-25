@@ -24,14 +24,8 @@ public class RatingService {
     private UserService userService;
 
 
-
-
-
     public RatingService(RatingRepository ratingRepository) { this.ratingRepository = ratingRepository;
     }
-
-
-    // Rating findRating
 
     public void updateRating(int id, Rating rating){
         ratingRepository.save(rating);
@@ -125,7 +119,6 @@ public class RatingService {
             }
             avgRating = ratingValue/count;
             Movie movie = movieRepository.findByMovieId(movieId);
-            //movie.setMovieId(movieId);
 
             movie.setAverageRating(roundAverageRating(avgRating,2));
             listMoviesWithAvg.add(movie);

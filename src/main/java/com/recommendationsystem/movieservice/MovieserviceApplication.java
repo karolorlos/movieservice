@@ -63,11 +63,6 @@ public class MovieserviceApplication {
 			ratingRepository.save(new Rating(0.2d, 2L,2L));
 			ratingRepository.save(new Rating(0.3d, 3L,2L));
 			ratingRepository.save(new Rating(0.6d, 4L,2L));
-//			ratingRepository.save(new Rating(0.8d, 5L,2L));
-//			ratingRepository.save(new Rating(0.2d, 6L,2L));
-//			ratingRepository.save(new Rating(0.3d, 7L,2L));
-//			ratingRepository.save(new Rating(0.4d, 8L,2L));
-//			ratingRepository.save(new Rating(0.5d, 9L,2L));
 			ratingRepository.save(new Rating(0.1d, 1L,1L));
 			ratingRepository.save(new Rating(0.3d, 2L,1L));
 			ratingRepository.save(new Rating(0.3d, 3L,1L));
@@ -115,32 +110,6 @@ public class MovieserviceApplication {
 			ratingRepository.save(new Rating(0.3d, 9L,6L));
 
 
-
-//			Rating rating1 = new Rating(0.0d,1L,2L);
-//			Rating rating2 = new Rating(0.2d, 2L,2L);
-//			Rating rating3 = new Rating(0.2d, 3L,2L);
-//			Rating rating4 = new Rating(0.2d, 4L,2L);
-//			Rating rating5 = new Rating(0.2d, 5L,2L);
-//			Rating rating6 = new Rating(0.2d, 6L,2L);
-//			Rating rating7 = new Rating(0.2d, 7L,2L);
-//			Rating rating8 = new Rating(0.2d, 8L,2L);
-//			Rating rating9 = new Rating(0.2d, 9L,2L);
-//
-//
-//			Set<Rating> ratings = new HashSet<Rating>();
-//			ratings.add(rating1);
-//			ratings.add(rating2);
-//			ratings.add(rating3);
-//			ratings.add(rating4);
-//			ratings.add(rating5);
-//			ratings.add(rating6);
-//			ratings.add(rating7);
-//			ratings.add(rating8);
-//			ratings.add(rating9);
-
-
-			//urepository.save(user2);
-
 			// Create users with BCrypt encoded password (user/user, admin/admin)
 			User user1 = new User("user", "$2a$06$3jYRJrg0ghaaypjZ/.g4SethoeA51ph3UD4kZi9oPkeMTpjKU5uo6", "USER");
 			User user2 = new User("admin", "$2a$08$bCCcGjB03eulCWt3CY0AZew2rVzXFyouUolL5dkL/pBgFkUH9O4J2", "ADMIN");
@@ -154,17 +123,6 @@ public class MovieserviceApplication {
 			urepository.save(user4);
 			urepository.save(user5);
 			urepository.save(user6);
-
-
-
-			//create Prediction engine
-
-
-
-
-
-
-
 
 		};
 	}

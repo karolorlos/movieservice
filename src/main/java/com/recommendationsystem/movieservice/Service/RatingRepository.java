@@ -10,9 +10,6 @@ import java.util.List;
 @Repository
 public interface RatingRepository extends CrudRepository<Rating,Long> {
     void deleteRatingByMovieId(Long movieId);
-    void deleteByMovieId(Rating movieId);
-    Boolean findRatingByMovieId(Long movieId);
-
     Iterable<Rating> findAllByUserId(Long userId);
     Iterable<Rating> findAllByMovieId(Long movieId);
 
