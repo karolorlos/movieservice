@@ -11,3 +11,6 @@ Slope One is a family of algorithms used for collaborative filtering, introduced
 Arguably, it is the simplest form of non-trivial item-based collaborative filtering based on ratings.
 Their simplicity makes it especially easy to implement them efficiently while their accuracy is often on par with more complicated and computationally expensive algorithms.
 
+![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/mainPage.JPG?raw=true "Optional Title")
+https://github.com/karolorlos/movieservice/blob/dev3/mainPage.JPG
+![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/mainPage.JPG "Optional title")
