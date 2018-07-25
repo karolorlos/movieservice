@@ -11,16 +11,16 @@ Their simplicity makes it especially easy to implement them efficiently while th
 For display data I used Thymeleaf template engine.
 
 
-<h3>Main Page </h3>
+Main Page
 ![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/mainPage.JPG?raw=true "Main page")
 
-<h3>All movies in service</h3>
+All movies in service
 ![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/allMovies.JPG?raw=true "All movies")
 
-<h3>Movies watched by user</h3>
+Movies watched by user
 ![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/watched.JPG?raw=true "Watched movies")
 
-<h3>Slope One - greater value of movie means movie fits better to user</h3>
+Slope One - greater value of movie means movie fits better to user
 ![Alt text](https://github.com/karolorlos/movieservice/blob/dev3/recommendation.JPG?raw=true "Recommendations")
 
 
